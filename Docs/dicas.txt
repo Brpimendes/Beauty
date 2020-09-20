@@ -1,0 +1,8 @@
+-deixar a imagem como de fundo e colocar as informações por cima da foto.
+-a página será em landscape com apenas 1 coluna.
+- reunir mais informações sobre como construir um site para salões de beleza, como apresentar
+
+-- A parte de serviços será feito de cards com os serviços prestados, da mesma forma na parte de menu 
+onde serão apresentados os serviços e ambos irão redirecionar para a página específica contendo os valores
+de cada serviço, numa espécie de tabela. **Só será redirecionado para a página caso o cliente esteja logado, 
+do contrário o mesmo será levado para a tela de login ou cadastro**

@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:wght@400;700&display=swap');
+
+/* PROPRIEDADES GLOBAIS */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li{
+    display: inline;
+    list-style-type: none;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ESTILIZAÇÃO DA PÁGINA INDEX */
+.out-container{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ESTILO DO CABEÇALHO */
+header{
+    /* height: 40vh; */
+    width: 100vw;
+    background-color: #ac6ebb;
+}
+
+header nav.header-info{
+    height: 60px;
+    width: 100vw;
+    padding: 21px;
+    background-color: #610d75;
+    background-image: linear-gradient(to right, #610d75, #c500f5, #610d75);
+    position: relative;
+}
+
+header nav.header-info > p{
+    display: inline-block;
+    color: #fff;
+    margin-left: 6vw;
+    position: relative;
+}
+
+header nav.header-info > p .material-icons{
+    position: absolute;
+    left: -28px;
+    top: -3px;
+}
+
+header nav.header-info > ul{
+    display: inline-block;
+    position: absolute;
+    right: 140px;
+}
+
+header nav.header-info > ul > li{
+    display: inline;
+    border: 1px solid white;
+    background-color: #fff7;
+    padding: 9px;
+    margin-left: 45px;
+    box-shadow: 2px 2px 10px #fff9;
+}
+
+header nav.header-info > ul > li .material-icons{
+    vertical-align: -28%;
+    font-size: 22px;
+    padding-right: 9px;
+    color: #fff;
+}
+
+header div.header-menu{
+    display: grid;
+    grid-template-columns: 30vw 70vw;
+    height: 85%;
+}
+
+header div.header-menu > div.header-menu-logo{
+    position: relative;
+}
+
+header div.header-menu > div.header-menu-logo > img{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    margin-left: 120px;
+}
+
+header div.header-menu > div.header-menu-action{
+    display: grid;
+    grid-template-rows: 35% 65%;
+}
+
+header div.header-menu > div.header-menu-action > nav > ul{
+    display: block;
+    text-align: center;
+}
+
+header div.header-menu > div.header-menu-action > nav > ul > li{
+    display: inline-block;
+    border: 1px solid white;
+    background-color: #610d75;
+    padding: 12px;
+    margin: 30px 15px;
+}
+
+header div.header-menu > div.header-menu-action > div.header-menu-about{
+    margin: 20px;
+}
+
+header div.header-menu > div.header-menu-action > div.header-menu-about > p{
+    width: 60%;
+    height: 100%;
+    padding: 15px;
+    margin-left: 50px;
+    background-color: #610d75;
+    border: 1px solid white;
+    color: #fff
+}
+
+/* ESTILO DO CORPO DA PÁGINA - SERVIÇOS */
+.page:first-child{
+    position: relative;
+    padding: 1%;
+}
+
+.page:first-child .services-list{
+    display: grid;
+    padding: inherit;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.page:first-child .services-list article{
+    margin: 10px;
+}
+
+.page:first-child .services-list article .pics{
+    width: 100%;
+    height: 100%;
+}
+
+.page:first-child .services-list article .pics > img{
+    width: inherit;
+}
+
+.page:first-child .services-list article .description{
+    display: block;
+    text-align: center;
+}
+
+.page:first-child > div.btn-table{
+    display: block;
+    text-align: center;
+    margin: 15px;
+}
+
+.page:first-child > div.btn-table > a{
+    background-color: #610d75;
+    padding: 15px 40px;
+    font-weight: bold;
+}
+
+/* ESTILO DO CORPO DA PÁGINA - REDES SOCIAIS */
+.page:nth-child(2).social-media{
+    display: block;
+    padding: 15px;
+    margin: 10px 0;
+    text-align: center;
+    background-color: #610d75;
+}
+
+.page:nth-child(2).social-media p{
+    display: inline-block;
+    transform: translateY(-13px);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.page:nth-child(2).social-media .social-media-icons img{
+    width: 30px;
+    height: 30px;
+    margin: 5px 10px;
+}
+
+/* ESTILO DO CORPO DA PÁGINA - MAPA DO SITE */
+.page:nth-child(3){
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+    gap: 30px;
+    margin: 25px;
+}
+
+.page:nth-child(3) .site-map-logo{
+    position: relative;
+}
+
+.page:nth-child(3) .site-map-logo .header-menu-logo > img{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    margin-left: 120px;
+}
+
+.page:nth-child(3) .site-map-btn .site-map-btn-align >h1{
+    text-align: center;
+}
+
+.page:nth-child(3) .site-map-btn .site-map-btn-align ul > li{
+    display: block;
+    list-style-type: none;
+    background-color: #610d75;
+    margin: 10px auto;
+    width: 50%;
+}
+
+.page:nth-child(3) .site-map-btn .site-map-btn-align ul > li > a{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 19px;
+    padding: 25px;
+    font-weight: bold;
+}
+
+.page:nth-child(3) .site-map-address span > img{
+    width: 40px;
+    height: 40px;
+}
+
+.page:nth-child(3) .site-map-address .site-map-address-description{
+    width: calc(100% - 40px);
+    text-align: left;
+    transform: translateY(-41px);
+    margin-left: auto;
+}
+
+.page:nth-child(3) .site-map-address .site-map-address-description > p{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px 7px;
+}
+
+/* ESTILO DO CORPO DA PÁGINA - CONTATOS */
+.page:nth-child(4){
+    padding: 1%;
+    /* background-image: url('../img/cadeiras-salao.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+.page:nth-child(4) .contact-tips{
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.page:nth-child(4) .contact-form form > label{
+    display: block;
+    padding: 5px 10px;
+    margin-left: 30px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.page:nth-child(4) .contact-form form > input{
+    display: block;
+    padding: 14px;
+    margin: 0 auto 10px 40px;
+    width: 40%;
+    /* border: none; */
+    /* background-color: #0003; */
+    color: #000;
+    font-size: 18px;
+    /* border-radius: 8px; */
+}
+
+.page:nth-child(4) .contact-form form > textarea{
+    margin: 0 auto 10px 40px;
+    width: 40%;
+    resize: none;
+    padding: 10px;
+    color: #000;
+    font-size: 18px;
+}
+
+.page:nth-child(4) .contact-form form > input[type="submit"]{
+    width: 25%;
+    margin: 0 auto 0 130px;
+    background-color: #610d75;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    box-shadow: 3px 3px 7px black;
+}
+
+footer p{
+    text-align: center;
+    padding: 20px;
+    background-color: #610d75;
+    color: #fff;
+    margin-top: 15px;
+}
+
+
+/* ESTILIZAÇÃO DA PÁGINA DE LOGIN */
+/* ESTILO DO CABEÇALHO */
+header.header-login{
+    height: 20vh;
+    width: 100vw;
+    background-color: #ac6ebb;
+}
+
+header.header-login .header-login-menu{
+    display: grid;
+    grid-template-columns: 30vw 70vw;
+    height: 100%;
+}
+
+header.header-login .header-login-menu .logo{
+    position: relative;
+}
+
+header.header-login .header-login-menu .logo > a > img{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    margin-left: 20px;
+}
+
+header.header-login .header-login-menu .welcome > h1{
+    padding: 20px 10px;
+    color: #610d75;
+}
+
+header.header-login .header-login-menu .welcome > p{
+    padding: 10px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #610d75;
+}
+
+/* ESTILO DO FORMULÁRIO */
+main div.login-form{
+    display: block;
+    text-align: center;
+    margin: 15vh;
+}
+
+main div.login-form > h1{
+    background-color: #610d75;
+    color: #fff;
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+main div.login-form form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+}
+
+main div.login-form form .login-form-det > label{
+    display: block;
+    text-align: left;
+    margin: 25px auto 0 auto;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+main div.login-form form .login-form-det > input{
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0px 20px;
+    padding: 15px;
+}
+
+main div.login-form form .login-form-btn{
+    display: grid;
+    position: absolute;
+    right: 70px;
+    top: 25px;
+}
+
+main div.login-form form .login-form-btn > button{
+    padding: 18px 60px;
+    margin: 20px;
+    background-color: #610d75;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+main div.login-form form .login-form-btn > button:last-child{
+    padding: 10px 75px;
+}
+
+main div.login-form .cad_btn{
+    display: block;
+    margin: 20px auto;
+    background-color: #610d75;
+    padding: 20px;
+    width: 60%;
+    /* text-align: right;*/
+}
+
+main div.login-form .cad_btn > span{
+    color: #fff;
+    font-weight: bold;
+}
+
+main div.login-form .cad_btn > span > a{
+    padding: 11px;
+    background-color: #fff;
+    color: #610d75;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1370px) {
+    main div.login-form form .login-form-det > input{
+        width: 90%;
+    }
+
+    main div.login-form form .login-form-btn{
+        position: unset;
+    }
+
+    main div.login-form form .login-form-btn > button{
+        transform: translateY(20px);
+    }
+}
