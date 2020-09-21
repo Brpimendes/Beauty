@@ -30,7 +30,7 @@
 
     <main>
         <div class="login-form">
-            <h1>Cadastro</h1>
+            <h1>CADASTRO</h1>
 
             <form action="" method="post">
                 <div class="login-form-det">
@@ -47,20 +47,20 @@
                     <input type="date" name="data_nasc" value="<?php $cliente->data_nasc ?>">
     
                     <label for="sexo">Sexo</label>
-                    <span>Feminino
+                    <span>
                         <input type="radio" name="sexo" value="F" 
                             <?php if( $cliente->sexo == 'F' ){
                                 checked;
                             } ?>
                         />
-                    </span>
-                    <span>Masculino
+                    </span>Feminino
+                    <span>
                         <input type="radio" name="sexo" value="M" 
                             <?php if( $cliente->sexo == 'M' ){
                                 checked;
                             } ?>
                         />
-                    </span>
+                    </span>Masculino
     
                     <label for="telefone">Telefone</label>
                     <input type="text" name="telefone" value="<?php $cliente->telefone ?>">
@@ -68,12 +68,12 @@
                     <label for="email">Email</label>
                     <input type="email" name="email" value="<?php $cliente->email ?>">
                 </div>
-                
-                <div class="cad-btn">
-                    <button name="acao" value="cadastrar">Cadastrar</button>
-                    <button name="acao" value="excluir">Excluir</button>
-                </div>
             </form>
+                
+            <div class="cad_btn">
+                <button name="acao" value="cadastrar">Cadastrar</button>
+                <button name="acao" value="excluir">Excluir</button>
+            </div>
         </div>
 
     </main>

@@ -313,6 +313,7 @@ footer p{
 
 
 /* ESTILIZAÇÃO DA PÁGINA DE LOGIN */
+
 /* ESTILO DO CABEÇALHO */
 header.header-login{
     height: 20vh;
@@ -447,3 +448,23 @@ main div.login-form .cad_btn > span > a{
         transform: translateY(20px);
     }
 }
+
+
+
+
+
+
+
+
+/* Modificação dos botões do cadastro de clientes cad_btn
+
+padding: 10px 30px;
+    margin: 5px;
+    background-color: #fff;
+    color: #610d75;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+*/
