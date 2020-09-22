@@ -449,7 +449,14 @@ main div.login-form .cad_btn > span > a{
     }
 }
 
+/* ESTILO DA PÁGINA DE TABELA DE PREÇOS */
 
+main div.tab-title{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+}
 
 
 

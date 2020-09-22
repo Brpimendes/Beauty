@@ -29,7 +29,7 @@
                     <nav>
                         <ul>
                             <li><a href="#services">Serviços</a></li>
-                            <li><a href="tabela.php">Tabela de Preços</a></li>
+                            <li><a href="tabelaPreco.php">Tabela de Preços</a></li>
                             <li><a href="#contact">Contato</a></li>
                         </ul>
                     </nav>
