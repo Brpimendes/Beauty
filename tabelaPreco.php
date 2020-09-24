@@ -1,3 +1,6 @@
+<?php
+    require_once('Controller/verificaAcesso.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,6 +72,8 @@
                     <p>Pé ou Mão(segunda a quinta) R$12,00</p>
                     <p>Pé ou Mão(sexta ou sábado) R$17,00</p>
                     <p>SPA dos pés R$28,00</p>
+                </div>
+                <div>
                     <p>Francesinha na mão +R$4,00</p>
                     <p>Francesinha no pé +R$4,00</p>
                     <p>Unhas de Acrigel R$85,00</p>
@@ -81,15 +86,13 @@
                 <h1>Depilação</h1>
             </div>
             <section class="tab-price">
-                <h2>Depilação</h2>
                 <div>
-                    <h2>Depilação</h2>
-                    <p>Axila R$16,00</p>
-                    <p>Buço R$10,00</p>
-                    <p>Braços R$18,00</p>
-                    <p>Meia Perna R$22,00</p>
-                    <p>Perna Inteira R$30,00</p>
-                    <p>Sobrancelha com cera R$16,00</p>
+                    <p><b>Axila</b> R$16,00</p>
+                    <p><b>Buço</b> R$10,00</p>
+                    <p><b>Braços</b> R$18,00</p>
+                    <p><b>Meia Perna</b> R$22,00</p>
+                    <p><b>Perna Inteira</b> R$30,00</p>
+                    <p><b>Sobrancelha com cera</b> R$16,00</p>
                 </div>
                 <div>
                     <p>Sobrancelha com pinça R$14,00</p>

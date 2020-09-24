@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-        ini_set('display_errors', false);
+        ini_set('display_errors', true);
 
         require_once('Controller/controllerCliente.php');
         // header("location:login.php");
@@ -34,8 +34,7 @@
 
             <form action="" method="post">
                 <div class="login-form-det">
-
-                    <input type="hidden" name="id" value="<?php $cliente->id ?>">
+                    <input type="hidden" name="id" value="<?php $cliente->cliente_id ?>">
     
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" value="<?php $cliente->nome ?>">
@@ -67,14 +66,17 @@
     
                     <label for="email">Email</label>
                     <input type="email" name="email" value="<?php $cliente->email ?>">
+
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha">
+                </div>
+                
+                <div class="cad_btn">
+                    <button name="acao" value="cadastrar">Cadastrar</button>
+                    <button name="acao" value="excluir">Excluir</button>
                 </div>
             </form>
-                
-            <div class="cad_btn">
-                <button name="acao" value="cadastrar">Cadastrar</button>
-                <button name="acao" value="excluir">Excluir</button>
             </div>
-        </div>
 
     </main>
 

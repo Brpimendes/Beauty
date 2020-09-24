@@ -148,7 +148,7 @@
                         <h1>Mapa do site</h1>
                         <ul>
                             <li><a href="#services">Serviços</a></li>
-                            <li><a href="tabela.php">Tabela de preços</a></li>
+                            <li><a href="tabelaPreco.php">Tabela de preços</a></li>
                             <li><a href="agendamento.php">Agendamento</a></li>
                         </ul>
                     </div>

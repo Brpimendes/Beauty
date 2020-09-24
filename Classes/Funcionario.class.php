@@ -1,6 +1,6 @@
 <?php
     class Funcionario{
-        private $id;
+        private $funcionario_id;
         private $cargo;
         private $nome;
         private $cpf;
@@ -8,8 +8,8 @@
         private $telefone;
         private $email;
 
-        public function __contruct($id, $cargo, $nome, $cpf, $data_nasc, $telefone, $email){
-            $this->id = $id;
+        public function __contruct($funcionario_id, $cargo, $nome, $cpf, $data_nasc, $telefone, $email){
+            $this->funcionario_id = $funcionario_id;
             $this->cargo = $cargo;
             $this->nome = $nome;
             $this->cpf = $cpf;
@@ -23,7 +23,7 @@
         }
 
         public function __set($atributo, $valor){
-            if( $atributo === 'id' && is_numeric($valor) ){
+            if( $atributo === 'funcionario_id' && is_numeric($valor) ){
                 $this->$atributo = $valor;
             }
 
@@ -56,6 +56,7 @@
         }
 
         public function adicionar_funcionario(){
+            
             $sql = " INSERT INTO funcionario VALUES (DEFAULT, '{$this->cargo}', '{$this->nome}', '{$this->cpf}', '{$this->data_nasc}', '{$this->telefone}', '{$this->email}') ";
             $qry = pg_query($sql);
 

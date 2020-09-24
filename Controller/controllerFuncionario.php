@@ -4,6 +4,7 @@
 
     $funcionario = new Funcionario($_POST['id'], $_POST['cargo'] ,$_POST['nome'], $_POST['cpf'], $_POST['data_nasc'], $_POST['telefone'], $_POST['email']);
 
+    print_r($funcionario);
     if( $_POST['acao'] === 'cadastrar' ){
         if( $funcionario->adicionar_funcionario() ){
             echo "Funcionario cadastrado com sucesso.";

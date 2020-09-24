@@ -1,11 +1,5 @@
 <?php
-    ini_set('display_errors', true);
-
-    if( !empty($_SESSION['id']) ){
-        require_once('Classes/Usuario.class.php');            
-    } else {
-        // header('location: login.php');
-    }
+    require_once('Controller/verificaAcesso.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,8 +10,8 @@
 </head>
 <body>
     <h1>
-        Você está logado como <?php session_start(); $_SESSION['nome'] ?> 
-        Sua identificação de login é <?php $_SESSION['id'] ?>
+        Você está logado como <?php echo $_SESSION['cliente']->nome; echo "<br />"; ?> 
+        Sua identificação de login é <?php echo $_SESSION['id']; ?>
     </h1>
 </body>
 </html>

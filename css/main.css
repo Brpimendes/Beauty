@@ -458,7 +458,13 @@ main div.tab-title{
     margin: 10px;
 }
 
-
+main section.tab-price{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    padding: 20px;
+    background-color: #e34bff;
+}
 
 
 

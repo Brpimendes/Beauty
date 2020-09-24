@@ -7,8 +7,8 @@
 </head>
 <body>
     <?php
-        ini_set('display_errors', true);
-        //require_once('Controller/controllerUsuario.php');        
+        ini_set('display_errors', false);
+        require_once('Controller/controllerUsuario.php');
     ?>
     <div class="out-container">
         <header class="header-login">
@@ -30,8 +30,6 @@
 
                 <form method="post">
                     <div class="login-form-det">
-                        <input type="hidden" name="usuario_id" value=" <?php $usuario->usuario_id ?> ">
-
                         <label for="login">Seu e-mail: </label>
                         <input type="email" name="login" placeholder="fulanim1234@mail.com" />
                         

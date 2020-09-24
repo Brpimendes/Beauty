@@ -6,7 +6,7 @@
     <title>Cadastro de Funcionario</title>
 </head>
 <body>
-<?php
+    <?php
         ini_set('display_errors', true);
 
         require_once('Controller/controllerFuncionario.php');
@@ -15,7 +15,7 @@
     ?>
 
     <form action="" method="post">
-        <input type="hidden" name="id" value="<?php $funcionario->id ?>">
+        <input type="hidden" name="id" value="<?php $funcionario->funcinario_id ?>">
 
         <label for="cargo">Cargo</label>
         <select name="cargo">

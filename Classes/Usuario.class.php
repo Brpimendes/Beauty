@@ -1,12 +1,12 @@
 <?php
     class Usuario{
-        private $usuario_id;
-        private $perfil_acesso_id;
-        private $cliente_id;
-        private $funcionario_id;
-        private $profissional_id;
-        private $login;
-        private $senha;
+        protected $usuario_id;
+        protected $perfil_acesso_id;
+        protected $cliente_id;
+        protected $funcionario_id;
+        protected $profissional_id;
+        protected $login;
+        protected $senha;
 
         public function __construct($usuario_id=null, $perfil_acesso_id=null, $cliente_id = null, $funcionario_id = null, $profissional_id = null, $login=null, $senha=null){
             $this->usuario_id = $usuario_id;
@@ -52,8 +52,9 @@
             }
         }
 
-        public function Adicionar_Usuario(){            
+        public function adicionar_usuario(){            
             $sql = " INSERT INTO usuario VALUES ( DEFAULT, {$this->perfil_acesso_id}, {$this->cliente_id}, {$this->funcionario_id}, {$this->profissional_id}, '{$this->login}', md5('{$this->senha}') )";
+            echo $sql;
             $qry = pg_query($sql);
 
             return pg_affected_rows($qry) ? true : false;
@@ -87,26 +88,38 @@
         }
 
         public function login_usuario(){
-            $sql = " SELECT * FROM usuario WHERE login = '{$this->login}' AND senha = 'md5($this->senha)' ";
+            $sql = " SELECT * FROM usuario WHERE login = '{$this->login}' AND senha = md5('{$this->senha}') ";
             $qry = pg_query($sql);
 
             if( pg_num_rows($qry) ){
                 $res = pg_fetch_all($qry);
 
                 $this->usuario_id = $res[0]['usuario_id'];
-				// $this->perfil_acesso_id = new Perfil_acesso($res[0]['perfil_acesso_id']);
-				$this->cliente_id = new Cliente($res[0]['cliente_id']);
-				// $this->funcionario_id = new Funcionario($res[0]['funcionario_id']);
-				// $this->profissional_id = new Profissional($res[0]['profissional_id']);
-				$this->login = $res[0]['login'];
+
+                session_start();
+                $_SESSION["id"] = $this->usuario_id;
+                $this->login = $res[0]['login'];
                 $this->senha = $res[0]['senha'];
+
+                if( $res[0]['cliente_id'] ){
+                    $this->cliente_id = new Cliente($res[0]['cliente_id']);
+
+                    $_SESSION['cliente'] = $this->cliente_id;
+
+                    header('Location: agenda.php');
+                }
+
+				// $this->perfil_acesso_id = new Perfil_acesso($res[0]['perfil_acesso_id']);
+				// if( $res[0]['funcionario_id']){
+                //     $this->funcionario_id = new Funcionario($res[0]['funcionario_id']);
+
+                //     $_SESSION["nome"] = $this->funcionario_id->nome;
                 
-                Session_Start();
-				$_SESSION["id"] = $this->usuario_id;
-				// $_SESSION["perfil"] = $this->perfil_acesso_id->nome;
-                $_SESSION["nome"] = $this->cliente_id->nome;
+				//     header('Location: agenda.php');
+                // }
+				// $this->profissional_id = new Profissional($res[0]['profissional_id']);
                 
-				header('Location: agenda.php');
+                
 				return true;
 			} else {
 				return false;
