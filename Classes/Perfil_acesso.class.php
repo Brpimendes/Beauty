@@ -28,7 +28,7 @@
             }
         }
 
-        public function cadastrar_perfil(){
+        public function adicionar_perfil(){
             $sql = "INSERT INTO Perfil_acesso VALUES ({$this->perfil_acesso_id}, '{$this->nome}', '{$this->permissao}')";
 
             $qry = pg_query($sql);

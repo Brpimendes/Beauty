@@ -23,38 +23,41 @@
         }
 
         public function __set($atributo, $valor){
-            if( $atributo === "usuario_id" && is_numeric($atributo) ){
+            if( $atributo === "usuario_id" && is_numeric($valor) ){
                 $this->$atributo = $valor;
             }
 
-            if( $atributo === "perfil_acesso_id" && ( is_numeric($atributo) || is_null($atributo) ) ){
+            if( $atributo === "perfil_acesso_id" && ( is_numeric($valor) || is_null($valor) ) ){
                 $this->$atributo = $valor;
             }
 
-            if( $atributo === "cliente_id" && ( is_numeric($atributo) || is_null($atributo) ) ){
+            if( $atributo === "cliente_id" && ( is_numeric($valor) || is_null($valor) ) ){
                 $this->$atributo = $valor;
             }
 
-            if( $atributo === "funcionario_id" && ( is_numeric($atributo) || is_null($atributo) ) ){
+            if( $atributo === "funcionario_id" && ( is_numeric($valor) || is_null($valor) ) ){
                 $this->$atributo = $valor;
             }
 
-            if( $atributo === "profissional_id" && ( is_numeric($atributo) || is_null($atributo) ) ){
+            if( $atributo === "profissional_id" && ( is_numeric($valor) || is_null($valor) ) ){
                 $this->$atributo = $valor;
             }
 
-            if( $atributo === "login" && is_string($atributo) ){
+            if( $atributo === "login" && is_string($valor) ){
                 $this->$atributo = $valor;
             }
 
-            if( $atributo === "senha" && is_string($atributo) ){
+            if( $atributo === "senha" && is_string($valor) ){
                 $this->$atributo = $valor;
             }
         }
 
-        public function adicionar_usuario(){            
-            $sql = " INSERT INTO usuario VALUES ( DEFAULT, {$this->perfil_acesso_id}, {$this->cliente_id}, {$this->funcionario_id}, {$this->profissional_id}, '{$this->login}', md5('{$this->senha}') )";
-            echo $sql;
+        public function adicionar_usuario(){
+            $this->cliente_id = $this->cliente_id ? $this->cliente_id : "null";
+            $this->funcionario_id = $this->funcionario_id ? $this->funcionario_id : "null";
+            $this->profissional_id = $this->profissional_id ? $this->profissional_id : "null";
+
+            $sql = " INSERT INTO usuario VALUES (DEFAULT, {$this->perfil_acesso_id}, {$this->cliente_id}, {$this->funcionario_id}, {$this->profissional_id}, '{$this->login}', md5('{$this->senha}') ) ";
             $qry = pg_query($sql);
 
             return pg_affected_rows($qry) ? true : false;
@@ -104,21 +107,26 @@
                 if( $res[0]['cliente_id'] ){
                     $this->cliente_id = new Cliente($res[0]['cliente_id']);
 
-                    $_SESSION['cliente'] = $this->cliente_id;
+                    $_SESSION['usuario'] = $this->cliente_id;
 
                     header('Location: agenda.php');
                 }
 
-				// $this->perfil_acesso_id = new Perfil_acesso($res[0]['perfil_acesso_id']);
-				// if( $res[0]['funcionario_id']){
-                //     $this->funcionario_id = new Funcionario($res[0]['funcionario_id']);
+                if( $res[0]['funcionario_id'] ){
+                    $this->funcionario_id = new Funcionario($res[0]['funcionario_id']);
 
-                //     $_SESSION["nome"] = $this->funcionario_id->nome;
-                
-				//     header('Location: agenda.php');
-                // }
-				// $this->profissional_id = new Profissional($res[0]['profissional_id']);
-                
+                    $_SESSION['usuario'] = $this->funcionario_id;
+
+                    header('location: cadCliente.php');
+                }
+
+                if( $res[0]['profissional_id'] ){
+                    $this->profissional_id = new Profissional($res[0]['profissional_id']);
+
+                    $_SESSION['usuario'] = $this->profissional_id;
+
+                    header('location: cadCliente.php');
+                }
                 
 				return true;
 			} else {

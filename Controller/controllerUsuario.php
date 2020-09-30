@@ -1,14 +1,13 @@
 <?php
-    require_once('Classes/Perfil_acesso.class.php');
     require_once('Classes/Usuario.class.php');
-    require_once('Classes/Funcionario.class.php');
+    require_once('Classes/Perfil_acesso.class.php');
     require_once('Classes/Cliente.class.php');
+    require_once('Classes/Funcionario.class.php');
     require_once('Classes/Profissional.class.php');
     require_once('conect.php');
 
     $usuario = new Usuario();
-    $usuario->login = $_POST['login'];
-
+    
     if( isset($_POST['login']) && isset($_POST['senha']) ){
         $usuario->login = $_POST['login'];
         $usuario->senha = $_POST['senha'];

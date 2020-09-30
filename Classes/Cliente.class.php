@@ -1,6 +1,5 @@
 <?php
     class Cliente extends Usuario{
-        protected $cliente_id;
         private $nome;
         private $cpf;
         private $data_nasc;
@@ -69,9 +68,17 @@
 
             if( pg_num_rows($qry) ){
                 $this->cliente_id = pg_fetch_result($qry, 0, 'cliente_id');
+
+                if ( $this->adicionar_usuario() ){
+                    pg_query('COMMIT');
+
+                    return true;
+                }
             }
 
-            return pg_affected_rows($qry) ? $this->adicionar_usuario() : false;
+            pg_query('ROLLBACK');
+
+            return false;
         }
 
         public function alterar_cliente(){
@@ -85,7 +92,7 @@
             $sql = " DELETE FROM cliente WHERE id = {$this->id} ";
             $qry = pg_query($sql);
 
-            return pg__affected_rows($qry) ? true : false;
+            return pg_affected_rows($qry) ? true : false;
         }
 
         // public function consultar_cliente(){

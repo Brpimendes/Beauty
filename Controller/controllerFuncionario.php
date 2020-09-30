@@ -1,10 +1,11 @@
 <?php
+    require_once('Classes/Usuario.class.php');
     require_once('Classes/Funcionario.class.php');
+    require_once('Classes/Perfil_acesso.class.php');
     require_once('conect.php');
 
-    $funcionario = new Funcionario($_POST['id'], $_POST['cargo'] ,$_POST['nome'], $_POST['cpf'], $_POST['data_nasc'], $_POST['telefone'], $_POST['email']);
+    $funcionario = new Funcionario((int)$_POST['id'], $_POST['cargo'], $_POST['nome'], $_POST['cpf'], $_POST['data_nasc'], $_POST['telefone'], $_POST['email'], $_POST['senha']);
 
-    print_r($funcionario);
     if( $_POST['acao'] === 'cadastrar' ){
         if( $funcionario->adicionar_funcionario() ){
             echo "Funcionario cadastrado com sucesso.";

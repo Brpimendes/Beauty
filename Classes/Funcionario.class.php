@@ -1,6 +1,5 @@
 <?php
-    class Funcionario{
-        private $funcionario_id;
+    class Funcionario extends Usuario{
         private $cargo;
         private $nome;
         private $cpf;
@@ -8,14 +7,21 @@
         private $telefone;
         private $email;
 
-        public function __contruct($funcionario_id, $cargo, $nome, $cpf, $data_nasc, $telefone, $email){
-            $this->funcionario_id = $funcionario_id;
-            $this->cargo = $cargo;
-            $this->nome = $nome;
-            $this->cpf = $cpf;
-            $this->data_nasc = $data_nasc;
-            $this->telefone = $telefone;
-            $this->email = $email;
+        public function __construct($funcionario_id=null, $cargo=null, $nome=null, $cpf=null, $data_nasc=null, $telefone=null, $email=null, $senha=null){
+            if( $funcionario_id ){
+                $this->funcionario_id = $funcionario_id;
+                $this->carregar_funcionario();
+            } else {
+                $this->cargo = $cargo;
+                $this->nome = $nome;
+                $this->cpf = $cpf;
+                $this->data_nasc = $data_nasc;
+                $this->telefone = $telefone;
+                $this->email = $email;
+                $this->perfil_acesso_id = 3;
+                $this->login = $email;
+                $this->senha = $senha;
+            }
         }
 
         public function __get($atributo){
@@ -56,15 +62,27 @@
         }
 
         public function adicionar_funcionario(){
-            
-            $sql = " INSERT INTO funcionario VALUES (DEFAULT, '{$this->cargo}', '{$this->nome}', '{$this->cpf}', '{$this->data_nasc}', '{$this->telefone}', '{$this->email}') ";
+            pg_query('BEGIN');
+            $sql = " INSERT INTO funcionario VALUES (DEFAULT, '{$this->cargo}', '{$this->nome}', '{$this->cpf}', '{$this->data_nasc}', '{$this->telefone}', '{$this->email}') RETURNING funcionario_id";
             $qry = pg_query($sql);
 
-            return pg_affected_rows($qry) ? true : false;
+            if( pg_num_rows($qry) ){
+                $this->funcionario_id = pg_fetch_result($qry, 0, 'funcionario_id');
+
+                if( $this->adicionar_usuario() ){
+                    pg_query('COMMIT');
+
+                    return true;
+                }
+            }
+
+            pg_query('ROLLBACK');
+
+            return false;
         }
 
         public function alterar_funcionario(){
-            $sql = " UPDATE funcionario SET nome = '{$this->nome}', cpf = '{$this->cpf}', data_nasc = '{$this->data_nasc}', sexo = '{$this->sexo}', telefone = '{$this->telefone}', email = '{$this->email}' WHERE id = {$this->id} ";
+            $sql = " UPDATE funcionario SET nome = '{$this->nome}', cpf = '{$this->cpf}', data_nasc = '{$this->data_nasc}', sexo = '{$this->sexo}', telefone = '{$this->telefone}', email = '{$this->email}' WHERE funcionario_id = {$this->funcionario_id} ";
             $qry = pg_query($qry);
 
             return pg_affected_rows($qry) ? true : false;
@@ -77,20 +95,26 @@
             return pg_affected_rows($qry) ? true : false;
         }
 
-        public function consultar_funcionario(){
-            $sql = " SELECT * FROM funcionario WHERE id = {$this->id} ";
+        public function carregar_funcionario(){
+            $sql = " SELECT * FROM funcionario fun
+                    INNER JOIN usuario u
+                    ON fun.funcionario_id = u.funcionario_id 
+                    WHERE fun.funcionario_id = {$this->funcionario_id} ";
+            
             $qry = pg_query($sql);
 
             if( pg_num_rows($qry) ){
                 $res = pg_fetch_all($qry);
 
-                $this->id = $res[0]['id'];
                 $this->cargo = $res[0]['cargo'];
                 $this->nome = $res[0]['nome'];
                 $this->cpf = $res[0]['cpf'];
                 $this->data_nasc = $res[0]['data_nasc'];
                 $this->telefone = $res[0]['telefone'];
                 $this->email = $res[0]['email'];
+                $this->perfil_acesso_id = $res['perfil_acesso_id'];
+                $this->login = $res['email'];
+                $this->senha = $res['senha'];
 
                 return true;
             } else {

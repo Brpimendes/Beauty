@@ -8,10 +8,9 @@
 </head>
 <body>
     <?php
-        ini_set('display_errors', true);
+        ini_set('display_errors', false);
 
         require_once('Controller/controllerCliente.php');
-        // header("location:login.php");
     ?>
 
     <header class="header-login">
@@ -49,14 +48,14 @@
                     <span>
                         <input type="radio" name="sexo" value="F" 
                             <?php if( $cliente->sexo == 'F' ){
-                                checked;
+                                'checked';
                             } ?>
                         />
                     </span>Feminino
                     <span>
                         <input type="radio" name="sexo" value="M" 
                             <?php if( $cliente->sexo == 'M' ){
-                                checked;
+                                'checked';
                             } ?>
                         />
                     </span>Masculino
