@@ -16,10 +16,18 @@
 
     if( $_POST['acao'] === 'excluir' ) {
         if( $cliente->excluir_cliente() ){
-            echo "Cadastrado com sucesso.";
+            echo "Cliente excluído com sucesso.";
         } else {
-            echo "Falha no cadastro";
+            echo "Falha ao excluir o cliente.";
         }
+    }
+
+    if( $_POST['acao'] === 'listar' ){
+        $clientes = $cliente->consultar_cliente();
+    }
+
+    if( $_POST['acao'] === 'carregar' ){
+        $cliente->carregar_cliente();
     }
 
     if( $_POST['acao'] === 'login' ) {

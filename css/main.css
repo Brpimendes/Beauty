@@ -87,9 +87,9 @@ header div.header-menu > div.header-menu-logo{
 
 header div.header-menu > div.header-menu-logo > img{
     position: absolute;
-    width: 50%;
+    width: 85%;
     height: 100%;
-    margin-left: 120px;
+    margin-left: 30px;
 }
 
 header div.header-menu > div.header-menu-action{
@@ -203,14 +203,24 @@ header div.header-menu > div.header-menu-action > div.header-menu-about > p{
     position: relative;
 }
 
-.page:nth-child(3) .site-map-logo .header-menu-logo > img{
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    margin-left: 120px;
+.page:nth-child(3) .site-map-logo > p{
+    text-align: center;
+    font-weight: bold;
 }
 
-.page:nth-child(3) .site-map-btn .site-map-btn-align >h1{
+.page:nth-child(3) .site-map-logo .header-menu-logo{
+    height: 80%;
+}
+
+.page:nth-child(3) .site-map-logo .header-menu-logo > img{
+    position: absolute;
+    width: 60%;
+    height: 80%;
+    margin-left: 55px;
+}
+
+
+.page:nth-child(3) .site-map-btn .site-map-btn-align > h1{
     text-align: center;
 }
 
@@ -301,6 +311,8 @@ header div.header-menu > div.header-menu-action > div.header-menu-about > p{
     font-family: 'Montserrat', sans-serif;
     border: none;
     box-shadow: 3px 3px 7px black;
+    cursor: pointer;
+    border-radius: 8px;
 }
 
 footer p{
@@ -354,7 +366,7 @@ header.header-login .header-login-menu .welcome > p{
 main div.login-form{
     display: block;
     text-align: center;
-    margin: 15vh;
+    margin: 05vh;
 }
 
 main div.login-form > h1{
@@ -366,28 +378,44 @@ main div.login-form > h1{
 }
 
 main div.login-form form{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
     width: 60%;
     margin: 0 auto;
     position: relative;
 }
 
-main div.login-form form .login-form-det > label{
+main div.login-form form .login-form-det{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+main div.login-form form .login-form-det > div > label{
     display: block;
     text-align: left;
-    margin: 25px auto 0 auto;
+    margin: 15px auto 0 auto;
     padding: 0 20px;
     font-size: 18px;
     font-weight: bold;
 }
 
-main div.login-form form .login-form-det > input{
+main div.login-form form .login-form-det > div > input{
     display: block;
     text-align: left;
-    width: 100%;
+    width: 90%;
     margin: 0px 20px;
-    padding: 15px;
+    padding: 10px;
+}
+
+main div.login-form form .login-form-det > div > span{
+    display: inline-block;
+    padding: 8px;
+    margin: 0 10px;
+    background-color: #610d75;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 main div.login-form form .login-form-btn{
@@ -415,11 +443,9 @@ main div.login-form form .login-form-btn > button:last-child{
 
 main div.login-form .cad_btn{
     display: block;
+    width: 100%;
     margin: 20px auto;
-    background-color: #610d75;
     padding: 20px;
-    width: 60%;
-    /* text-align: right;*/
 }
 
 main div.login-form .cad_btn > span{
@@ -433,6 +459,15 @@ main div.login-form .cad_btn > span > a{
     color: #610d75;
     font-weight: bold;
     margin: 0 15px;
+}
+
+main div.login-form .cad_btn button{
+    background-color: #610d75;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 20px 60px;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 320px) and (max-width: 1370px) {

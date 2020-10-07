@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-        ini_set('display_errors', true);
+        ini_set('display_errors', false);
         require_once('Controller/controllerUsuario.php');
     ?>
     <div class="out-container">

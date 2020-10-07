@@ -63,7 +63,7 @@
             return pg_affected_rows($qry) ? true : false;
         }
 
-        public function Consultar_Usuario(){
+        public function consultar_usuario(){
             $sql = " SELECT * FROM usuario WHERE id = {$this->id}, {perfil_acesso_id} = {$this->perfil_acesso_id}, cliente_id = {$this->cliente_id}, funcionario_id = {$this->funcionario_id}, profissional_id = {$this->profissional_id}, login = '{$this->login}', senha = '{$this->senha}' ";
             $qry = pg_query($sql);
 
@@ -76,15 +76,19 @@
             }
         }
 
-        public function Alterar_Usuario(){
+        public function alterar_usuario(){
             $sql = " UPDATE usuario SET id = {$this->id}, perfil_acesso_id = {$this->perfil_acesso_id}, cliente_id = {$this->cliente_id}, funcionario_id = {$this->funcionario_id}, profissional_id = {$this->profissional_id}, login = '{$this->login}', senha = '{$this->senha}' ";
             $qry = pg_query($sql);
 
             return pg_affected_rows($qry) ? true : false;
         }
 
-        public function Excluir_Usuario(){
-            $sql = " DELETE FROM usuario WHERE id = { $this->id } ";
+        public function excluir_usuario(){
+            // $this->cliente_id = $this->cliente_id ? $this->cliente_id : "null";
+            // $this->funcionario_id = $this->funcionario_id ? $this->funcionario_id : "null";
+            // $this->profissional_id = $this->profissional_id ? $this->profissional_id : "null";
+
+            $sql = " DELETE FROM usuario WHERE login = '{$this->login}' ";
             $qry = pg_query($sql);
             
             return pg_affected_rows($qry) ? true : false;
@@ -108,6 +112,15 @@
                     $this->cliente_id = new Cliente($res[0]['cliente_id']);
 
                     $_SESSION['usuario'] = $this->cliente_id;
+
+                    //Caso a Thais deixe passar a exclusão logica descomentar o codigo abaixo,
+                    // ele faz a verificação do usuario se está ativo ou não para acessar o sistema
+                    // if($this->cliente_ativo === false){
+                    //     echo " Sem permissão para acessar o sistema. 
+                        
+                    //         Voltar para a página principal. Clique <a href='/'>aqui</a>
+                    //     ";
+                    // }
 
                     header('Location: agenda.php');
                 }

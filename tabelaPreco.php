@@ -1,6 +1,3 @@
-<?php
-    require_once('Controller/verificaAcesso.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

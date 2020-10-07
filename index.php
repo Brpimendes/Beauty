@@ -22,7 +22,7 @@
 
             <div class="header-menu">
                 <div class="header-menu-logo">
-                    <img src="../img/logo salao.png" alt="logo salão Beauty">
+                    <img src="img/logo.png" alt="logo salão Beauty">
                 </div>
 
                 <div class="header-menu-action">
@@ -51,21 +51,51 @@
                 <section class="services-list">
                     <article>
                         <div class="pics">
-                            <img src="../img/cabelo-15-anos.jpg" alt="cabelo 15 anos">
+                            <img src="../img/tratamento.jpg" alt="tratamento de cabelo feminino">
                         </div>
 
                         <div class="description">
-                            <p class="description-title">Cabelo</p>
+                            <p class="description-title">Tratamentos</p>
                         </div>
                     </article>
     
                     <article>
                         <div class="pics">
-                            <img src="../img/cabelo-15-anos.jpg" alt="cabelo 15 anos">
+                            <img src="../img/escova.jpg" alt="escova emcabelo feminino">
                         </div>
 
                         <div class="description">
-                            <p class="description-title">Cabelo</p>
+                            <p class="description-title">Escova</p>
+                        </div>
+                    </article>
+
+                    <article>
+                        <div class="pics">
+                            <img src="../img/unhas.jpg" alt="unha sendo feita">
+                        </div>
+
+                        <div class="description">
+                            <p class="description-title">unhas</p>
+                        </div>
+                    </article>
+
+                    <article>
+                        <div class="pics">
+                            <img src="../img/corte.jpg" alt="corte de cabelo feminino com tesoura">
+                        </div>
+
+                        <div class="description">
+                            <p class="description-title">Corte</p>
+                        </div>
+                    </article>
+
+                    <article>
+                        <div class="pics">
+                            <img src="../img/tintura.jpg" alt="cabelo em processo de tintura">
+                        </div>
+
+                        <div class="description">
+                            <p class="description-title">Tintura</p>
                         </div>
                     </article>
 
@@ -75,53 +105,23 @@
                         </div>
 
                         <div class="description">
-                            <p class="description-title">Cabelo</p>
+                            <p class="description-title">Depilação</p>
                         </div>
                     </article>
 
                     <article>
                         <div class="pics">
-                            <img src="../img/cabelo-15-anos.jpg" alt="cabelo 15 anos">
+                            <img src="../img/pes.jpg" alt="cabelo 15 anos">
                         </div>
 
                         <div class="description">
-                            <p class="description-title">Cabelo</p>
-                        </div>
-                    </article>
-
-                    <article>
-                        <div class="pics">
-                            <img src="../img/cabelo-15-anos.jpg" alt="cabelo 15 anos">
-                        </div>
-
-                        <div class="description">
-                            <p class="description-title">Cabelo</p>
-                        </div>
-                    </article>
-
-                    <article>
-                        <div class="pics">
-                            <img src="../img/cabelo-15-anos.jpg" alt="cabelo 15 anos">
-                        </div>
-
-                        <div class="description">
-                            <p class="description-title">Cabelo</p>
-                        </div>
-                    </article>
-
-                    <article>
-                        <div class="pics">
-                            <img src="../img/cabelo-15-anos.jpg" alt="cabelo 15 anos">
-                        </div>
-
-                        <div class="description">
-                            <p class="description-title">Cabelo</p>
+                            <p class="description-title">Pés</p>
                         </div>
                     </article>
                 </section>
 
                 <div class="btn-table">
-                    <a href="tabela.php">Tabela Completa</a>
+                    <a href="tabelaPreco.php">Tabela Completa</a>
                 </div>
             </section>
             
@@ -137,7 +137,7 @@
             <section class="page" id="site-map">
                 <div class="site-map-logo">
                     <div class="header-menu-logo">
-                        <img src="../img/logo salao.png" alt="">
+                        <img src="../img/logo.png" alt="nossa logo">
                     </div>
                     <p>Nosso objetivo é fazer as nossas clientes se sentirem ainda mais belas.</p>
                     <p>Acreditamos que a auto estima é o elemento essencial na busca pelo equilíbrio emocional.</p>

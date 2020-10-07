@@ -82,39 +82,51 @@
         }
 
         public function alterar_cliente(){
-            $sql = " UPDATE cliente SET nome = '{$this->nome}', cpf = '{$this->cpf}', data_nasc = '{$this->data_nasc}', sexo = '{$this->sexo}', telefone = '{$this->telefone}', email = '{$this->email}' WHERE id = {$this->id} ";
+            $sql = " UPDATE cliente SET nome = '{$this->nome}', cpf = '{$this->cpf}', data_nasc = '{$this->data_nasc}', sexo = '{$this->sexo}', telefone = '{$this->telefone}', email = '{$this->email}' WHERE id = {$this->cliente_id} ";
             $qry = pg_query($qry);
 
             return pg_affected_rows($qry) ? true : false;
         }
 
         public function excluir_cliente(){
-            $sql = " DELETE FROM cliente WHERE id = {$this->id} ";
-            $qry = pg_query($sql);
+            pg_query('BEGIN');
+            if ( $this->excluir_usuario() ){
+                $sql = " DELETE FROM cliente WHERE cliente_id = {$this->cliente_id} ";
+                $qry = pg_query($sql);
 
-            return pg_affected_rows($qry) ? true : false;
+                if( pg_affected_rows($qry) ){
+                    pg_query('COMMIT');
+
+                    return true;
+                }
+            }
+
+            pg_query('ROLLBACK');
+
+            return false;
         }
 
-        // public function consultar_cliente(){
-        //     $sql = " SELECT * FROM cliente WHERE cliente_id = {$this->cliente_id} ";
-        //     $qry = pg_query($sql);
-            
-        //     if( pg_num_rows($qry) ){
-        //         $res = pg_fetch_all($qry);
+        //Comentar coma Thais sobre a possibilidade de fazer a exclusão lógica dos dados.
+        // public function exclui_logicamente(){
+        //     pg_query('BEGIN');
+        //     $sql = " UPDATE cliente SET cliente_ativo = FALSE where cliente_id = {$this->cliente_id} ";
+        //     $qry = pq_query($sql);
 
-        //         $this->cliente_id = $res[0]['cliente_id'];
-        //         $this->nome = $res[0]['nome'];
-        //         $this->cpf = $res[0]['cpf'];
-        //         $this->data_nasc = $res[0]['data_nasc'];
-        //         $this->sexo = $res[0]['sexo'];
-        //         $this->telefone = $res[0]['telefone'];
-        //         $this->email = $res[0]['email'];
-
-        //         return true;
-        //     } else {
-        //         return false;
-        //     }
+        //     return pg_affected_rows($qry) ? true : false;
         // }
+
+        public function consultar_cliente(){
+            $sql = " SELECT * FROM cliente ";
+            $qry = pg_query($sql);
+            
+            if( pg_num_rows($qry) ){
+                $res = pg_fetch_all($qry);
+
+                return $res;
+            } else {
+                return false;
+            }
+        }
 
         public function carregar_cliente(){
             $sql = " SELECT * FROM cliente cli 
@@ -136,6 +148,8 @@
                 $this->perfil_acesso_id = $res['perfil_acesso_id'];
                 $this->login = $res['email'];
                 $this->senha = $res['senha'];
+                // $this->cliente_ativo = $res['cliente_ativo'];
+
 
                 return true;
             } else {

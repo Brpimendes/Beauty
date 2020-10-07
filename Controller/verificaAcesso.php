@@ -23,8 +23,4 @@
     } else {
         header('location: login.php');
     }
-
-    echo "<pre>";
-    print_r($_SESSION['usuario']);
-    echo "</pre>";
 ?>
