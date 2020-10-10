@@ -3,7 +3,7 @@
         private $funcao_id;
         private $nome_funcao;
 
-        public function __construct($funcao_id, $nome_funcao){
+        public function __construct($funcao_id=null, $nome_funcao=null){
             if( $funcao_id ){
                 $this->funcao_id = $funcao_id;
                 $this->carregar_funcao();
