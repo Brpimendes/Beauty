@@ -7,8 +7,9 @@
             if( $funcao_id ){
                 $this->funcao_id = $funcao_id;
                 $this->carregar_funcao();
+            } else {
+                $this->nome_funcao = $nome_funcao;
             }
-            $this->nome_funcao = $nome_funcao;
         }
 
         public function __get($atributo){

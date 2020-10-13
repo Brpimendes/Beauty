@@ -13,4 +13,29 @@
             echo "Falha ao cadastrar profissional";
         }
     }
+
+    if( $_POST['acao'] === 'excluir' ){
+        if( $profissional->excluir_profissional() ){
+            echo "Profissional excluído com sucesso";
+        } else {
+            echo "Falha ao excluir profissional";
+        }
+    }
+
+    if( $_POST['acao'] === 'alterar' ){
+        if( $profissional->alterar_profissional() ){
+            echo "Profissional alterado com sucesso";
+        } else {
+            echo "Falha ao alterar profissional";
+        }
+    }
+
+    if( $_POST['acao'] === 'listar' ){
+        $profissionais = $profissional->consultar_profissional();
+    }
+    
+    if( $_POST['acao'] === 'carregar' ){
+        $profissional->carregar_profissional();
+    }
+
 ?>

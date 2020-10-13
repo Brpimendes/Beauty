@@ -67,7 +67,7 @@
         }
 
         public function alterar_servico(){
-            $sql = "UPDATE servicos SET funcao_id = {$this->funcao_id}, nome = '{$this->nome}', valor = {$this->valor}, comissao{$this->comissao}, {$this->tempo_servico} 
+            $sql = "UPDATE servicos SET funcao_id = {$this->funcao_id->funcao_id}, nome = '{$this->nome}', valor = {$this->valor}, comissao = {$this->comissao}, tempo_servico = '{$this->tempo_servico}' 
                     WHERE servicos_id = {$this->servicos_id}";
             $qry = pg_query($sql);
 
@@ -95,10 +95,10 @@
                 $res = pg_fetch_assoc($qry, 0);
 
                 $this->servicos_id = $res['servicos_id'];
-                $this->funcao_id = $res['funcao_id'];
+                $this->funcao_id = new Funcao($res['funcao_id']);
                 $this->nome = $res['nome'];
                 $this->valor = $res['valor'];
-                $this->comissao = $res['comissao'];
+                $this->comissao = $res['comissao'] * 100;
                 $this->tempo_servico = $res['tempo_servico'];
 
                 return true;

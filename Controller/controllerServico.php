@@ -4,7 +4,7 @@
     require_once('conect.php');
 
     $servico = new Servicos();
-    $servico->servico_id = (int)$_POST['id'];
+    $servico->servicos_id = (int)$_POST['id'];
     $servico->funcao_id = new Funcao($_POST['funcao_id']);
     $servico->nome = $_POST['nome'];
     $servico->valor = (float)$_POST['valor'];
@@ -27,6 +27,14 @@
             echo "Servico excluído com sucesso.";
         } else {
             echo "Falha ao excluir o servico.";
+        }
+    }
+
+    if( $_POST['acao'] === 'alterar' ){
+        if( $servico->alterar_servico() ){
+            echo "Servico alterado com sucesso.";
+        } else {
+            echo "Falha ao alterar o servico.";
         }
     }
 

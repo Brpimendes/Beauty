@@ -44,6 +44,7 @@
 
         <button name="acao" value="cadastrar">Cadastrar</button>
         <button name="acao" value="listar">Listar</button>
+        <button name="acao" value="alterar">Alterar</button>
     </form>
 
     <?php
@@ -58,21 +59,17 @@
                     </tr>
                 ";
                 foreach( $servicos as $ser ){
-                    $funcao = new Funcao($ser['funcao_id']);
-
-                    echo "<pre>";
-                    print_r($funcao);
-                    echo "</pre>";
-
+                    $serv = new Servicos($ser['servicos_id']);
+                    
                     echo "<tr>
-                            <td>{$funcao->nome_funcao}</td>
-                            <td>{$ser['nome']}</td>
-                            <td>{$ser['valor']}</td>
-                            <td>{$ser['comissao']}</td>
-                            <td>{$ser['tempo_servico']}</td>
+                            <td>{$serv->funcao_id->nome_funcao}</td>
+                            <td>{$serv->nome}</td>
+                            <td>{$serv->valor}</td>
+                            <td>{$serv->comissao}</td>
+                            <td>{$serv->tempo_servico}</td>
                             <td>
                                 <form method='post'>
-                                    <input type='hidden' name='id' value='{$ser['servicos_id']}' />
+                                    <input type='hidden' name='id' value='{$serv->servicos_id}' />
                                     <button name='acao' value='excluir'>Excluir</button>
                                     <button name='acao' value='carregar'>Carregar</button>
                                 </form>

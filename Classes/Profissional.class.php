@@ -6,8 +6,8 @@
         private $telefone;
         private $email;
 
-        public function __construct($profissional_id, $nome, $data_nasc, $cpf, $telefone, $email, $senha){
-            if($profissional_id){
+        public function __construct($profissional_id=null, $nome=null, $data_nasc=null, $cpf=null, $telefone=null, $email=null, $senha=null){
+            if( $profissional_id ){
                 $this->profissional_id = $profissional_id;
                 $this->carregar_profissional();
             } else {
@@ -76,11 +76,13 @@
         }
 
         public function alterar_profissional(){
-        $sql = " UPDATE profissional SET nome = '{$this->nome}', data_nasc = '{$this->data_nasc}', cpf = '{$this->cpf}', telefone = '{$this->telefone}', email = '{$this->email}' WHERE profissional_id = {$this->profissional_id}";
+            $sql = " UPDATE profissional SET nome = '{$this->nome}', data_nasc = '{$this->data_nasc}', cpf = '{$this->cpf}', telefone = '{$this->telefone}', email = '{$this->email}' 
+                    WHERE profissional_id = {$this->profissional_id}";
             $qry = pg_query($sql);
             
             return pg_affected_rows($qry) ? true : false;
         }
+
         public function excluir_profissional(){
             $sql = " DELETE FROM profissional WHERE profissional_id = {$this->profissional_id}";
 
@@ -89,13 +91,26 @@
             return pg_affected_rows($qry) ? true : false;
         }
 
+        public function consultar_profissional(){
+            $sql = "SELECT * FROM profissional";
+            $qry = pg_query($sql);
+
+            if( pg_num_rows($qry) ){
+                $res = pg_fetch_all($qry);
+
+                return $res;
+            } else {
+                return false;
+            }
+        }
+
         public function carregar_profissional(){
             $sql = " SELECT * FROM profissional pro
                     INNER JOIN usuario u 
                     ON pro.profissional_id = u.profissional_id 
                     WHERE pro.profissional_id = {$this->profissional_id} ";
             
-            $qry = pg_query($qry);
+            $qry = pg_query($sql);
 
             if( pg_num_rows($qry) ){
                 $res = pg_fetch_all($qry);
