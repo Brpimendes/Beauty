@@ -2,52 +2,33 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>Beauty Login</title>
 </head>
 <body>
     <?php
-        ini_set('display_errors', false);
-        require_once('Controller/controllerUsuario.php');
+        ini_set('display_errors', true);
+        //require_once('Controller/controllerUsuario.php');
     ?>
-    <div class="out-container">
-        <header class="header-login">
-            <div class="header-login-menu">
-                <div class="logo">
-                    <a href="/"><img src="img/logo salao.png" alt="logo salão Beauty"></a>
-                </div>
-                
-                <div class="welcome">
-                    <h1>Bem vindo!</h1>
-    
-                    <p>Faça login para acessar sua área personalizada</p>
-                </div>
+    <div class="container-login"> 
+        <div class="container-conteudo"> 
+            <div class="login-img"> 
+                <img src="img/logo.png">
             </div>
-        </header>
-        <main>
             <div class="login-form">
-                <h1>LOGIN</h1>
-
-                <form method="post">
-                    <div class="login-form-det">
-                        <label for="login">Seu e-mail: </label>
-                        <input type="email" name="login" placeholder="fulanim1234@mail.com" />
-                        
-                        <label for="senha">Sua senha: </label>
-                        <input type="password" name="senha" />
-                    </div>
-                    
-                    <div class="login-form-btn">
-                        <button name="acao" value="entrar">Entrar</button>
-                        <button name="acao" value="esqueci">Esqueci a senha</button>
-                    </div>
-                    
+                <span>Faça seu login</span>
+                <form>
+                    <input type="email" placeholder="E-mail">
+                    <input type="password" placeholder="Senha">
+                    <button> Entrar </button>
                 </form>
-                <div class="cad_btn">
-                    <span>Ainda não tem conta? <a href="cadCliente.php">Cadastre-se</a></span>
+                <div class="linha"></div>
+                <div class="login-opcoes">
+                    <a href=""> Esqueceu sua senha?</a>
+                    <a href=""> Ainda não tem cadastro? <strong>Cadastre-se!</strong></a>
                 </div>
             </div>
-        </main>
+        </div>
     </div>
 </body>
 </html>

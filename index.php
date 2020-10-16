@@ -51,7 +51,7 @@
                 <section class="services-list">
                     <article>
                         <div class="pics">
-                            <img src="../img/tratamento.jpg" alt="tratamento de cabelo feminino">
+                            <img src="img/tratamento.jpg" alt="tratamento de cabelo feminino">
                         </div>
 
                         <div class="description">
@@ -61,7 +61,7 @@
     
                     <article>
                         <div class="pics">
-                            <img src="../img/escova.jpg" alt="escova emcabelo feminino">
+                            <img src="img/escova.jpg" alt="escova emcabelo feminino">
                         </div>
 
                         <div class="description">
@@ -71,7 +71,7 @@
 
                     <article>
                         <div class="pics">
-                            <img src="../img/unhas.jpg" alt="unha sendo feita">
+                            <img src="img/unhas.jpg" alt="unha sendo feita">
                         </div>
 
                         <div class="description">
@@ -81,7 +81,7 @@
 
                     <article>
                         <div class="pics">
-                            <img src="../img/corte.jpg" alt="corte de cabelo feminino com tesoura">
+                            <img src="img/corte.jpg" alt="corte de cabelo feminino com tesoura">
                         </div>
 
                         <div class="description">
@@ -91,7 +91,7 @@
 
                     <article>
                         <div class="pics">
-                            <img src="../img/tintura.jpg" alt="cabelo em processo de tintura">
+                            <img src="img/tintura.jpg" alt="cabelo em processo de tintura">
                         </div>
 
                         <div class="description">
@@ -101,7 +101,7 @@
 
                     <article>
                         <div class="pics">
-                            <img src="../img/cabelo-15-anos.jpg" alt="cabelo 15 anos">
+                            <img src="img/cabelo-15-anos.jpg" alt="cabelo 15 anos">
                         </div>
 
                         <div class="description">
@@ -111,7 +111,7 @@
 
                     <article>
                         <div class="pics">
-                            <img src="../img/pes.jpg" alt="cabelo 15 anos">
+                            <img src="img/pes.jpg" alt="cabelo 15 anos">
                         </div>
 
                         <div class="description">

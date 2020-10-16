@@ -16,6 +16,7 @@ a{
     text-decoration: none;
 }
 
+
 /* ESTILIZAÇÃO DA PÁGINA INDEX */
 .out-container{
     width: 100vw;
@@ -363,6 +364,143 @@ header.header-login .header-login-menu .welcome > p{
 }
 
 /* ESTILO DO FORMULÁRIO */
+
+.container-login{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.container-conteudo{
+    display: flex;
+    border: 1px solid #610d75;
+    border-radius: 10px;
+    width: 900px;
+    height: 600px;
+}
+
+.login-img{
+    display: flex;
+    width: 45%;
+    height: 100%;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-img img{
+    width: 80%;
+    height: 70%;
+}
+
+.login-form{
+    display: flex;
+    width: 55%;
+    height: 100%;
+    background-color: #ac6ebb;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.login-form span{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+
+.login-form form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login-form input{
+    width: 80%;
+    padding: 12px 15px;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: #ac6ebb;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: white;
+    outline: none;
+    
+    }
+    ::-webkit-input-placeholder {
+        color: white;
+        
+     }
+     
+     :-moz-placeholder { /* Firefox 18- */
+        color: white;
+         
+     }
+     
+     ::-moz-placeholder {  /* Firefox 19+ */
+        color:white; 
+        
+     }
+     
+     :-ms-input-placeholder {  
+        color:white; 
+        
+     }
+
+.login-form button{
+    width: 80%;
+    background-color: #610d75;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    box-shadow: 3px 3px 7px black;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 12px 5px;
+    margin-top: 20px;
+}
+
+.login-form .linha{
+    width: 70%;
+    height: 1px;
+    background-color: #dcdcdc;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.login-form .login-opcoes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.login-opcoes a{
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+.login-opcoes a:hover{
+    text-decoration: underline;
+}
+
+
 main div.login-form{
     display: block;
     text-align: center;
