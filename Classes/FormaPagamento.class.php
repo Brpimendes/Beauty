@@ -7,7 +7,8 @@
             if( $forma_pagamento_id ){
                 $this->forma_pagamento_id = $forma_pagamento_id;
                 $this->carregar_forma_pagamento();
-            } else {
+            }
+            if( $forma_pagamento ){
                 $this->forma_pagamento = $forma_pagamento;
             }
         }
@@ -41,7 +42,6 @@
         }
 
         public function alterar_forma_pagamento(){
-            echo
             $sql = "UPDATE forma_pagamento SET forma_pagamento = '{$this->forma_pagamento}' 
                     WHERE forma_pagamento_id = {$this->forma_pagamento_id}";
             $qry = pg_query($sql);

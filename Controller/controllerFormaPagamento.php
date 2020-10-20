@@ -21,9 +21,6 @@
     }
 
     if( $_POST['acao'] === 'alterar' ){
-        echo"<pre>";
-        var_dump($_POST);
-        echo"<pre>";
         if( $forma_pagamento->alterar_forma_pagamento() ){
             echo "Forma de pagamento alterado com sucesso.";
         } else {
@@ -31,10 +28,7 @@
         }
     }
 
-    if( $_POST['acao'] === 'listar' ){
-        
-        $formasPagamentos = $forma_pagamento->consultar_forma_pagamento();
-    }
+    $formasPagamentos = $forma_pagamento->consultar_forma_pagamento();
 
     if( $_POST['acao'] === 'carregar' ){
         $forma_pagamento->carregar_forma_pagamento();

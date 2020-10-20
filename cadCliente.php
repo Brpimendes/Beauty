@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Cliente</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <?php
@@ -77,45 +79,54 @@
 
                 <div class="cad_btn">
                     <button name="acao" value="cadastrar">Cadastrar</button>
-                    <button name="acao" value="listar">Listar</button>
                 </div>
             </form>
         </div>
 
-        <div class="table-cad">
+        <div class="table">
             <?php
                 if($clientes){
                     echo "<table>
-                        <tr>
-                            <th>Nome</th>
-                            <th>CPF</th>
-                            <th>Data_Nascimento</th>
-                            <th>Sexo</th>
-                            <th>Telefone</th>
-                            <th>Email</th>
-                            <th>Ação</th>
-                        </tr>
-                    ";
-                        foreach($clientes as $cli){
-                            echo "
+                            <thead>
                                 <tr>
-                                    <td>{$cli['nome']}</td>
-                                    <td>{$cli['cpf']}</td>
-                                    <td>{$cli['data_nasc']}</td>
-                                    <td>{$cli['sexo']}</td>
-                                    <td>{$cli['telefone']}</td>
-                                    <td>{$cli['email']}</td>
-                                    <td>
-                                        <form method='post'>
-                                            <input type='hidden' name='id' value='{$cli['cliente_id']}' />
-                                            <button name='acao' value='excluir'>Excluir</button>
-                                            <button name='acao' value='carregar'>Carregar</button>
-                                        </form>
-                                    </td>
+                                    <th>Nome</th>
+                                    <th>CPF</th>
+                                    <th>Data_Nascimento</th>
+                                    <th>Sexo</th>
+                                    <th>Telefone</th>
+                                    <th>Email</th>
+                                    <th>Ação</th>
                                 </tr>
-                            ";
-                        }
-                    echo "</table";
+                            </thead>
+                    ";
+                    echo "<tbody>";
+                    foreach($clientes as $cli){
+                        echo "
+                            <tr>
+                                <td>{$cli['nome']}</td>
+                                <td>{$cli['cpf']}</td>
+                                <td>{$cli['data_nasc']}</td>
+                                <td>{$cli['sexo']}</td>
+                                <td>{$cli['telefone']}</td>
+                                <td>{$cli['email']}</td>
+                                <td>
+                                    <form method='post'>
+                                        <input type='hidden' name='id' value='{$cli['cliente_id']}' />
+                                        <div class='material' id='excluir'>
+                                            <span class='material-icons'>delete_forever</span>
+                                            <button name='acao' value='excluir'>Excluir</button>
+                                        </div>
+                                        <div class='material'>
+                                            <span class='material-icons carregar'>upgrade</span>
+                                            <button name='acao' value='carregar'>Carregar</button>
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
+                        ";
+                    }
+                    echo "</tbody>";
+                    echo "</table>";
                 }
             ?>
         </div>

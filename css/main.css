@@ -323,9 +323,6 @@ footer p{
     margin-top: 15px;
 }
 
-
-/* ESTILIZAÇÃO DA PÁGINA DE LOGIN */
-
 /* ESTILO DO CABEÇALHO */
 header.header-login{
     height: 20vh;
@@ -352,7 +349,7 @@ header.header-login .header-login-menu .logo > a > img{
 
 header.header-login .header-login-menu .welcome > h1{
     padding: 20px 10px;
-    color: blue;
+    color: #610d75;
 }
 
 header.header-login .header-login-menu .welcome > p{
@@ -362,130 +359,7 @@ header.header-login .header-login-menu .welcome > p{
     color: #610d75;
 }
 
-/* ESTILO DO FORMULÁRIO */
-main div.login-form{
-    display: block;
-    text-align: center;
-    margin: 05vh;
-}
-
-main div.login-form > h1{
-    background-color: #610d75;
-    color: #fff;
-    width: 60%;
-    margin: 0 auto;
-    padding: 10px;
-}
-
-main div.login-form form{
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
-    width: 60%;
-    margin: 0 auto;
-    position: relative;
-}
-
-main div.login-form form .login-form-det{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-main div.login-form form .login-form-det > div > label{
-    display: block;
-    text-align: left;
-    margin: 15px auto 0 auto;
-    padding: 0 20px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-main div.login-form form .login-form-det > div > input{
-    display: block;
-    text-align: left;
-    width: 90%;
-    margin: 0px 20px;
-    padding: 10px;
-}
-
-main div.login-form form .login-form-det > div > span{
-    display: inline-block;
-    padding: 8px;
-    margin: 0 10px;
-    background-color: #610d75;
-    border-radius: 6px;
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-main div.login-form form .login-form-btn{
-    display: grid;
-    position: absolute;
-    right: 70px;
-    top: 25px;
-}
-
-main div.login-form form .login-form-btn > button{
-    padding: 18px 60px;
-    margin: 20px;
-    background-color: #610d75;
-    color: #fff;
-    font-size: 18px;
-    border: none;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-main div.login-form form .login-form-btn > button:last-child{
-    padding: 10px 75px;
-}
-
-main div.login-form .cad_btn{
-    display: block;
-    width: 100%;
-    margin: 20px auto;
-    padding: 20px;
-}
-
-main div.login-form .cad_btn > span{
-    color: #fff;
-    font-weight: bold;
-}
-
-main div.login-form .cad_btn > span > a{
-    padding: 11px;
-    background-color: #fff;
-    color: #610d75;
-    font-weight: bold;
-    margin: 0 15px;
-}
-
-main div.login-form .cad_btn button{
-    background-color: #610d75;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    padding: 20px 60px;
-    cursor: pointer;
-}
-
-@media screen and (min-width: 320px) and (max-width: 1370px) {
-    main div.login-form form .login-form-det > input{
-        width: 90%;
-    }
-
-    main div.login-form form .login-form-btn{
-        position: unset;
-    }
-
-    main div.login-form form .login-form-btn > button{
-        transform: translateY(20px);
-    }
-}
-
 /* ESTILO DA PÁGINA DE TABELA DE PREÇOS */
-
 main div.tab-title{
     display: block;
     width: 100%;

@@ -5,6 +5,8 @@
     require_once('conect.php');
     
     $cliente = new Cliente($_POST['id'], $_POST['nome'], $_POST['cpf'], $_POST['data_nasc'], $_POST['sexo'], $_POST['telefone'], $_POST['email'], $_POST['senha']);
+    
+    $clientes = $cliente->consultar_cliente();
 
     if ( $_POST['acao'] === 'cadastrar' ) {
         if( $cliente->adicionar_cliente() ){
@@ -22,9 +24,6 @@
         }
     }
 
-    if( $_POST['acao'] === 'listar' ){
-        $clientes = $cliente->consultar_cliente();
-    }
 
     if( $_POST['acao'] === 'carregar' ){
         $cliente->carregar_cliente();

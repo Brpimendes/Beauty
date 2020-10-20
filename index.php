@@ -149,7 +149,7 @@
                         <ul>
                             <li><a href="#services">Serviços</a></li>
                             <li><a href="tabelaPreco.php">Tabela de preços</a></li>
-                            <li><a href="agendamento.php">Agendamento</a></li>
+                            <li><a href="agenda.php">Agendamento</a></li>
                         </ul>
                     </div>
                 </div>

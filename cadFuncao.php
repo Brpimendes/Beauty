@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-        ini_set('display_errors', false);
+        ini_set('display_errors', true);
         require_once('Controller/controllerFuncao.php');
     ?>
     <div class="out-container">
