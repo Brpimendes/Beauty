@@ -11,7 +11,7 @@
         <header class="header-login">
             <div class="header-login-menu">
                 <div class="logo">
-                    <a href="/"><img src="img/logo salao.png" alt="logo salão Beauty"></a>
+                    <a href="/"><img src="img/logo.png" alt="logo salão Beauty"></a>
                 </div>
                 
                 <div class="welcome">

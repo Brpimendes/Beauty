@@ -45,6 +45,7 @@ main div.login-form form div.login-form-det input{
     margin: 10px auto;
     color: #fff;
     font-weight: bold;
+    outline: none;
 }
 
 main div.login-form form div.login-form-det button{

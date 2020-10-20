@@ -6,6 +6,7 @@
     <title>Cadastro de Cliente</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/form.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -75,9 +76,7 @@
                         <label for="senha">Senha</label>
                         <input type="password" name="senha">
                     </div>
-                </div>
-
-                <div class="cad_btn">
+                    
                     <button name="acao" value="cadastrar">Cadastrar</button>
                 </div>
             </form>
