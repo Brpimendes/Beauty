@@ -4,53 +4,32 @@
     <meta charset="UTF-8">
     <title>Beauty Login</title>
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/form.css">
+    <!-- <link rel="stylesheet" href="/css/form.css"> -->
 </head>
 <body>
     <?php
-        ini_set('display_errors', false);
+        ini_set('display_errors', true);
         require_once('Controller/controllerUsuario.php');
     ?>
-    <div class="out-container">
-        <header class="header-login">
-            <div class="header-login-menu">
-                <div class="logo">
-                    <a href="/"><img src="img/logo.png" alt="logo salão Beauty"></a>
-                </div>
-                
-                <div class="welcome">
-                    <h1>Bem vindo!</h1>
-    
-                    <p>Faça login para acessar sua área personalizada</p>
-                </div>
+    <div class="container-login"> 
+        <div class="container-conteudo"> 
+            <div class="login-img"> 
+                <img src="img/logo.png">
             </div>
-        </header>
-        <main>
             <div class="login-form">
+                <span>Faça seu login</span>
                 <form method="post">
-                    <div class="form-pics">
-                        <img src="img/cabelo1.jpg" alt="cabelo">
-                    </div>
-
-                    <div class="login-form-det">
-                        <h1>LOGIN</h1>
-                        <label for="login">Seu e-mail: </label>
-                        <input type="email" name="login" placeholder="fulanim1234@mail.com" />
-                        
-                        <label for="senha">Sua senha: </label>
-                        <input type="password" name="senha" />
-                        
-                        <button name="acao" value="entrar">Entrar</button>
-
-                        <span class="bars"></span>
-
-                        <div class="cad_btn">
-                            <span>Ainda não tem conta? <a href="cadCliente.php">Cadastre-se</a></span>
-                        </div>
-                    </div>
+                    <input type="email" name="login" placeholder="E-mail">
+                    <input type="password" name="senha" placeholder="Senha">
+                    <button name="acao" value="entrar"> Entrar </button>
                 </form>
+                <div class="linha"></div>
+                <div class="login-opcoes">
+                    <a href=""> Esqueceu sua senha?</a>
+                    <a href=""> Ainda não tem cadastro? <strong>Cadastre-se!</strong></a>
+                </div>
             </div>
-        </main>
+        </div>
     </div>
 </body>
 </html>
