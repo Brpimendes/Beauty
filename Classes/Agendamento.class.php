@@ -43,17 +43,11 @@
                 $this->$atributo = $valor;
             }
 
-            if( $atributo === 'data_atendimento' && preg_match("@([0-9]{2}/([0-9]{2}/([0-9]{4})@", $valor) ){
-                $data = new DateTime();
-                $data->setDate('ano', 'mes', 'dia');
-
+            if( $atributo === 'data_atendimento' && preg_match($valor) ){
                 $this->$atributo = $valor;
             }
 
-            if( $atributo === 'data_agendamento' && preg_match("@([0-9]{2}/([0-9]{2}/([0-9]{4})@", $valor) ){
-                $data = new DateTime();
-                $data->setDate('ano', 'mes', 'dia');
-
+            if( $atributo === 'data_agendamento' && preg_match($valor) ){
                 $this->$atributo = $valor;
             }
 
@@ -62,19 +56,20 @@
             }
         }
 
-        //verificar se o total tem que ser carregado em uma função a parte, pois ela é o somatório de serviços.
-        //exemplo public function carregar_total(), e dentro do INSERT será chamada essa função ($this->carregar_total).
         public function adicionar_agendamento(){
-            $sql = "INSERT INTO agendamento VALUES (DEFAULT, {$this->funcionario_id}, {$this->cliente_id}, {$this->total}, '{$this->data_atendimento}', '{$this->data_agendamento}', '{$this->horario_agendamento}')";
-            $qry = pg_query($sql);
-
-            return pg_affected_rows($qry)? true : false;
+            
         }
+        public function excluir_agendamento(){
 
-        public function carregar_total($vlr_servico){
-            $this->total += $vlr_servico;
+        }
+        public function consultar_agendamento(){
 
-            return $this->total;
+        }
+        public function alterar_agendamento(){
+
+        }
+        public function carregar_agendamento(){
+
         }
     }
 ?>
