@@ -13,7 +13,9 @@
 
     $funcao = new Funcao();
     $funcoes = $funcao->consultar_funcao();
-
+    
+    $servicos = $servico->consultar_servico();
+    
     if( $_POST['acao'] === 'cadastrar' ){
         if( $servico->adicionar_servico() ){
             echo "Serviço cadastrado com sucesso.";
@@ -38,9 +40,6 @@
         }
     }
 
-    if( $_POST['acao'] === 'listar' ){
-        $servicos = $servico->consultar_servico();
-    }
 
     if( $_POST['acao'] === 'carregar' ){
         $servico->carregar_servico();
