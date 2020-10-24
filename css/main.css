@@ -353,7 +353,7 @@ header.header-login .header-login-menu .logo > a > img{
 
 header.header-login .header-login-menu .welcome > h1{
     padding: 20px 10px;
-    color: blue;
+    color: #610d75 ;
 }
 
 header.header-login .header-login-menu .welcome > p{
@@ -379,7 +379,8 @@ header.header-login .header-login-menu .welcome > p{
     border: 1px solid #610d75;
     border-radius: 10px;
     width: 900px;
-    height: 600px;
+    height: 600px;  
+
 }
 
 .login-img{
@@ -391,12 +392,32 @@ header.header-login .header-login-menu .welcome > p{
     border-bottom-left-radius: 10px;
     align-items: center;
     justify-content: center;
+
 }
 
 .login-img img{
     width: 80%;
     height: 70%;
+    
 }
+
+.cadastro-img{
+    display: flex;
+    width: 45%;
+    height: 100%;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    align-items: center;
+    justify-content: center; 
+}
+
+.cadastro-img img{
+    width: 80%;
+    height: 70%;
+    
+}
+
 
 .login-form{
     display: flex;
@@ -638,7 +659,6 @@ main section.tab-price{
     padding: 20px;
     background-color: #e34bff;
 }
-
 
 
 

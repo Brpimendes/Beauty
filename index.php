@@ -15,7 +15,7 @@
                 <p><span class="material-icons">local_phone</span>Telefone: (21)2404-0695 | E-mail: beauty_salao@gmail.com</p>
 
                 <ul>
-                    <li><span class="material-icons">calendar_today</span><a href="/">Agende seu Horário</a></li>
+                    <li><span class="material-icons">calendar_today</span><a href="agenda.php">Agende seu Horário</a></li>
                     <li><a href="login.php">Login/Cadastro</a></li>
                 </ul>
             </nav>

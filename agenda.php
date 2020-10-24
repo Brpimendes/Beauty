@@ -9,20 +9,27 @@
     <title>Agendamento</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-    <div class="out-container">
-        <header class="header-login">
-            <div class="header-login-menu">
-                <div class="logo">
-                    <a href="/"><img src="img/logo salao.png" alt="logo salão Beauty"></a>
-                </div>
-                
-                <div class="welcome">
-                    <h1>Bem Vindo</h1>
-                    <p>Agende seu horário!</p>
+<div class="container-login"> 
+        <div class="container-conteudo"> 
+            <div class="login-img"> 
+                <img src="img/relogio.jpg">
+            </div>
+            <div class="login-form">
+                <span>Agende seu serviço aqui!</span>
+            <form method="post">
+                <input type="date" placeholder="Escolha uma data">
+                <input type="profissional" placeholder="Escolha o serviço">
+                <input type="text" placeholder="escolha um profissional">
+                <input type="time" placeholder="horário">           
+                <button> Agendar </button>
+            </form>
+                <div class="linha"></div>
+                <div class="login-opcoes">
+                    <a href=""> <b>Novo agendamento</b></a>
+                    <a href="cadastro.php"> <b>Sua página</b></a>
                 </div>
             </div>
-        </header>
+        </div>
     </div>
 </body>
 </html>
