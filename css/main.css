@@ -1052,7 +1052,24 @@ main section.tab-price{
     background-color: #e34bff;
 }
 
+/* ESTILO DA PÁGINA PRINCIPAL - MENU LATERAL*/
 
+main div.menu-lateral{
+        width: 250px;
+        height: 100vh;
+        background-color: #ac6ebb;
+}
+
+main div.menu-lateral ul li{
+    display: block;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+main div.menu-lateral ul li:hover{
+    background-color: aliceblue;
+}
 
 /* Modificação dos botões do cadastro de clientes cad_btn
 
